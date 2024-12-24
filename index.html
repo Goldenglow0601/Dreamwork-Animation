@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DreamWork Animation</title>
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="" />
+  </head>
+  <body>
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <!-- Navbar Logo -->
+        <div class="logo">
+          <!-- Logo Placeholder for Illustration -->
+          <a href="index.html"
+            ><img width="100px" height="auto" src="images/logo.png"
+          /></a>
+        </div>
+
+        <!-- Navbar Links -->
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <!--
+       -->
+          <li><a href="about.html">About</a></li>
+          <!--
+       -->
+          <li><a href="movie.html">Movie</a></li>
+          <!--
+       -->
+          <li><a href="tvshow.html">TV Show</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="slider-container">
+      <!--The Wild Robot-->
+      <section class="home active">
+        <video
+          class="video-slide"
+          src="images/video/The Wild Robot ｜ Watch at Home Tomorrow.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="home-content">
+          <h1>The Wild Robot</h1>
+          <a href="https://youtu.be/67vbA5ZJdKQ">Official Trailer</a>
+          <a href="https://www.dreamworks.com/movies/the-wild-robot" class="btn"
+            >Official Site</a
+          >
+        </div>
+      </section>
+
+      <!--JURASSIC WORLD: CHAOS THEORY-->
+      <section class="home">
+        <video
+          class="video-slide"
+          src="images/video/Jurassic World： Chaos Theory ｜ Season 2 Trailer ｜ Netflix.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="home-content">
+          <h1>JURASSIC WORLD: CHAOS THEORY</h1>
+          <a href="https://youtu.be/uVp6QnabFIo">Official Trailer</a>
+          <a
+            href="https://www.dreamworks.com/shows/jurassic-world-chaos-theory"
+            class="btn"
+            >Official Site</a
+          >
+        </div>
+      </section>
+
+      <!--Dog Man-->
+      <section class="home">
+        <video
+          class="video-slide"
+          src="images/video/Dog Man ｜ Official Trailer.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="home-content">
+          <h1>Dog Man</h1>
+          <a href="https://youtu.be/ppIJOoBuXFc">Official Trailer</a>
+          <a href="https://www.dreamworks.com/movies/dog-man" class="btn"
+            >Official Site</a
+          >
+        </div>
+      </section>
+
+      <!--Mighty Monsterwheelies-->
+      <section class="home">
+        <video
+          class="video-slide"
+          src="images/video/Mighty Monsterwheelies ｜ Season 1 Trailer ｜ Netflix.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="home-content">
+          <h1>Mighty Monsterwheelies</h1>
+          <a href="https://youtu.be/2MGOfytq1K0">Official Trailer</a>
+          <a
+            href="https://www.dreamworks.com/shows/mighty-monsterwheelies"
+            class="btn"
+            >Official Site</a
+          >
+        </div>
+      </section>
+
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </div>
+
+    <script>
+      // Get all sections and navigation buttons
+      const sections = document.querySelectorAll(".home");
+      const navBtns = document.querySelectorAll(".nav-btn");
+      let currentSection = 0;
+
+      // Function to show a specific section
+      function showSection(index) {
+        // Hide all sections
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        // Remove active class from all nav buttons
+        navBtns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        // Show selected section and activate nav button
+        sections[index].classList.add("active");
+        navBtns[index].classList.add("active");
+
+        currentSection = index;
+      }
+
+      // Add click event listeners to nav buttons
+      navBtns.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          showSection(index);
+        });
+      });
+
+      // Auto slide every 5 seconds
+      function autoSlide() {
+        currentSection = (currentSection + 1) % sections.length;
+        showSection(currentSection);
+      }
+
+      // Start auto sliding
+      setInterval(autoSlide, 5000);
+    </script>
+  </body>
+</html>
