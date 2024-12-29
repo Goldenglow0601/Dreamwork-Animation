@@ -4,35 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DreamWorks - Who We Are</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="css/about.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      /* CSS for rolling animation */
+      .rolling-animation {
+        animation: rolling 5s linear infinite;
+      }
+
+      @keyframes rolling {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /* CSS to fit logo height to navbar height */
+      .navbar-brand img {
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-    <nav id="navbar" class="">
-      <div class="nav-wrapper">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
         <!-- Navbar Logo -->
-        <div class="logo">
-          <!-- Logo Placeholder for Illustration -->
-          <a href="index.html"
-            ><img width="100px" height="auto" src="images/logo.png"
-          /></a>
-        </div>
+        <a class="navbar-brand" href="index.html">
+          <img
+            width="100px"
+            src="images/logo.png"
+            alt="DreamWork Animation Logo"
+            class="rolling-animation"
+          />
+        </a>
+
+        <!-- Hamburger Menu -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
         <!-- Navbar Links -->
-        <ul id="menu">
-          <li><a href="index.html">Home</a></li>
-          <!--
-         -->
-          <li><a href="about.html">About</a></li>
-          <!--
-         -->
-          <li><a href="movie.html">Movie</a></li>
-          <!--
-         -->
-          <li><a href="tvshow.html">TV Show</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movie.html">Movie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tvshow.html">TV Show</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
       <small>ABOUT DREAMWORKS</small>
       <h1>WHO WE ARE</h1>
       <p>
@@ -41,9 +86,13 @@
       </p>
     </section>
 
-    <section class="content-section">
+    <section class="content-section" data-aos="fade-up">
       <div class="section-image">
-        <img src="images/About/about-films.jpg" alt="DreamWorks Characters" />
+        <img
+          src="images/About/about-films.jpg"
+          alt="DreamWorks Characters"
+          class="img-fluid"
+        />
       </div>
       <div class="section-text">
         <h2>
@@ -54,11 +103,11 @@
           We've introduced a lovable curmudgeonly ogre, an overly optimistic
           panda, found truth in dragon-riding vikings, and discovered aliens...
         </p>
-        <a href="#" class="cta-button">MORE ABOUT OUR CAMPUS</a>
+        <a href="#" class="cta-button btn btn-primary">MORE ABOUT OUR CAMPUS</a>
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="content-section" data-aos="fade-up">
       <div class="section-text">
         <h2>CAMPUS</h2>
         <p>
@@ -66,13 +115,21 @@
           feature film and television divisions – including artists, animators,
           technologists and engineers...
         </p>
-        <a href="#" class="cta-button">MORE ABOUT OUR CAMPUS</a>
+        <a href="#" class="cta-button btn btn-primary">MORE ABOUT OUR CAMPUS</a>
       </div>
       <div class="section-image">
-        <img src="images/About/about-tech.jpg" alt="DreamWorks Campus" />
+        <img
+          src="images/About/about-tech.jpg"
+          alt="DreamWorks Campus"
+          class="img-fluid"
+        />
       </div>
     </section>
 
     <!-- Repeat similar sections for Feature Films, Television, and Technology -->
   </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </html>

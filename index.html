@@ -4,34 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DreamWork Animation</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="favicon/favicon.ico" type="" />
   </head>
   <body>
-    <nav id="navbar" class="">
-      <div class="nav-wrapper">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
         <!-- Navbar Logo -->
-        <div class="logo">
-          <!-- Logo Placeholder for Illustration -->
-          <a href="index.html"
-            ><img width="100px" height="auto" src="images/logo.png"
-          /></a>
-        </div>
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/logo.png"
+            alt="DreamWork Animation Logo"
+            style="width: 100px; height: 100%"
+          />
+        </a>
 
         <!-- Navbar Links -->
-        <ul id="menu">
-          <li><a href="index.html">Home</a></li>
-          <!--
-       -->
-          <li><a href="about.html">About</a></li>
-          <!--
-       -->
-          <li><a href="movie.html">Movie</a></li>
-          <!--
-       -->
-          <li><a href="tvshow.html">TV Show</a></li>
-        </ul>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movie.html">Movie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tvshow.html">TV Show</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -160,6 +182,36 @@
 
       // Start auto sliding
       setInterval(autoSlide, 5000);
+
+      // Responsive Navigation
+      document.addEventListener("DOMContentLoaded", function () {
+        const nav = document.getElementById("navbar");
+        // Removed the manual menu button creation as per instructions
+      });
+
+      // Interactive Elements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add hover effect to navigation links
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("mouseover", function () {
+            this.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+          });
+          link.addEventListener("mouseout", function () {
+            this.style.backgroundColor = "transparent";
+          });
+        });
+
+        // Add animation to sections on scroll
+        window.addEventListener("scroll", function () {
+          sections.forEach((section) => {
+            if (section.getBoundingClientRect().top < window.innerHeight) {
+              section.classList.add("animate");
+            } else {
+              section.classList.remove("animate");
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>
